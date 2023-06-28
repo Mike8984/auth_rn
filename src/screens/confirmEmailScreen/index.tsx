@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {View, Text, ScrollView} from 'react-native';
 import styles from './styles';
 import Input from '../../components/input';
@@ -6,17 +7,18 @@ import Button from '../../components/button';
 
 const ConfirmEmailScreen = () => {
   const [code, setCode] = useState('');
+  const navigation = useNavigation();
 
   const handleConfirm = () => {
-    console.warn('handleConfirm');
+    navigation.navigate('Home');
   };
 
   const handleResend = () => {
     console.warn('handleResend');
-  }
+  };
 
   const navigateToSignIn = () => {
-    console.warn('navigateToSignIn');
+    navigation.navigate('Login')
   };
 
   return (

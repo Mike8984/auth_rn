@@ -11,7 +11,7 @@ const ResetPasswordScreen = () => {
   const navigation = useNavigation();
 
   const handleSubmit = () => {
-    console.warn('submit');
+    navigation.navigate('Home');
   };
 
   const navigateToSignIn = () => {

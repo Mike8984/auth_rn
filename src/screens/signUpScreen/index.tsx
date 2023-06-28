@@ -14,7 +14,7 @@ const SignUpScreen = () => {
   const navigation = useNavigation();
 
   const handleRegister = () => {
-    navigation.navigate('Home');
+    navigation.navigate('ConfirmEmail');
   };
 
   const handleTermsOfUse = () => {
