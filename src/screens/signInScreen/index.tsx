@@ -4,19 +4,20 @@ import Logo from '../../../assets/images/Logo_1.png';
 import styles from './styles';
 import Input from '../../components/input';
 import Button from '../../components/button';
+import {useNavigation} from '@react-navigation/native';
 
 const SignInScreen = () => {
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {height} = useWindowDimensions();
+  const navigation = useNavigation();
 
-  const handleSubmit = () => {
-    console.warn('submit');
+  const handleLogin = () => {
+    navigation.navigate('Home');
   };
 
   const handleForgotPassword = () => {
-    console.warn('forgot password');
+    navigation.navigate('ForgotPassword');
   };
 
   const handleSignInFacebook = () => {
@@ -32,7 +33,7 @@ const SignInScreen = () => {
   };
 
   const handleSignUp = () => {
-    console.warn('sign up');
+    navigation.navigate('Register');
   };
 
   return (
@@ -46,7 +47,7 @@ const SignInScreen = () => {
           placeholder="password"
           secureTextEntry
         />
-        <Button title="Sign In" onPress={handleSubmit} type="PRIMARY" />
+        <Button title="Sign In" onPress={handleLogin} type="PRIMARY" />
         <Button
           title="Forgot password"
           onPress={handleForgotPassword}

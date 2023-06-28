@@ -8,6 +8,7 @@ type Props = {
   type?: string;
   bgColor?: string;
   fgColor?: string;
+  disabled?: boolean;
 };
 
 const Button: FC<Props> = ({
@@ -16,6 +17,7 @@ const Button: FC<Props> = ({
   type = 'PRIMARY',
   bgColor,
   fgColor,
+  disabled,
 }) => {
   return (
     <TouchableOpacity
@@ -23,8 +25,10 @@ const Button: FC<Props> = ({
         styles.container,
         styles[`container_${type}`],
         bgColor ? {backgroundColor: bgColor} : {},
+        disabled ? {opacity: 0.7} : {},
       ]}
-      onPress={onPress}>
+      onPress={onPress}
+      disabled={disabled}>
       <Text
         style={[
           styles.text,
