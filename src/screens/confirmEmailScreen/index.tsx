@@ -4,10 +4,12 @@ import {View, Text, ScrollView} from 'react-native';
 import styles from './styles';
 import Input from '../../components/input';
 import Button from '../../components/button';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { StackParams } from '../types';
 
 const ConfirmEmailScreen = () => {
   const [code, setCode] = useState('');
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
 
   const handleConfirm = () => {
     navigation.navigate('Home');

@@ -5,12 +5,14 @@ import styles from './styles';
 import Input from '../../components/input';
 import Button from '../../components/button';
 import {useNavigation} from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { StackParams } from '../types';
 
 const SignInScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {height} = useWindowDimensions();
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
 
   const handleLogin = () => {
     navigation.navigate('Home');

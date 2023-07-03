@@ -1,12 +1,12 @@
-import {FC} from 'react';
+import {Dispatch, FC, SetStateAction} from 'react';
 import {View, TextInput} from 'react-native';
 import styles from './styles';
 
 type Props = {
   value: string;
-  setValue: () => void;
+  setValue: Dispatch<SetStateAction<string>>;
   placeholder: string;
-  secureTextEntry: boolean;
+  secureTextEntry?: boolean;
 };
 
 const Input: FC<Props> = ({value, setValue, placeholder, secureTextEntry}) => {
